@@ -1,0 +1,10 @@
+version: 0.2
+
+phases:
+  build:
+    commands:
+      - echo Running PySpark linting...
+  post_build:
+    commands:
+      - echo Uploading PySpark script to S3...
+      - aws s3 cp script.py s3://demo-gitops-glue-345205765782/src/
